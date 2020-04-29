@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:app7/Services/api.dart';
+
 
 
 class Home extends StatefulWidget {
@@ -12,15 +14,31 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  Future<Null> _handlerefresh(){
-    print('refreshing');
+  void pushData() async{
+      api instance = api(data2: 'hello', data1: 'please');
+       await instance.getData();
+      Navigator.pushNamed(context, '/world',arguments: {
+        'totalcases':instance.tc,
+        'totalDeaths':instance.td,
+        'totalRecovered':instance.tr,
+        'activeCases':instance.ac
+      });
+  }
+
+  Future<Null> _handlerefresh() async{
+    return await Future.delayed(Duration(seconds: 3), (){
+
+    });
   }
 
   createAlertDialog(BuildContext context){
     return showDialog(context: context,builder: (context){
       return AlertDialog(
         title: Text('About'),
-        content:Text('Covidfy app v1.0.0 Developed by Rodger Kumwanje') ,
+        content:Text('Covidfy app v1.0.0 Developed by Rodger Kumwanje',
+        style: TextStyle(
+          fontSize: 19
+        ),),
         actions: <Widget>[
           MaterialButton(
             child: Text('OK',
@@ -36,6 +54,8 @@ class _HomeState extends State<Home> {
       );
     });
   }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +75,7 @@ class _HomeState extends State<Home> {
               }).toList();
             },
             onSelected: choiceAction,
+            
             )
         ],
       ),
@@ -102,7 +123,7 @@ class _HomeState extends State<Home> {
                                 size: 50,
                               ),
                               onPressed: (){
-                                launch('tel:/+265 880 122 611');
+                                launch('tel:/54747');
                               },
                             ),
                           ),
@@ -208,7 +229,8 @@ class _HomeState extends State<Home> {
                                 size: 50,
                               ),
                               onPressed: (){
-                                Navigator.pushNamed(context, '/world');
+                                pushData();
+                                
                               },
                             ),
                           ),
