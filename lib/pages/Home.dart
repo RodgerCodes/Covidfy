@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
     return showDialog(context: context,builder: (context){
       return AlertDialog(
         title: Text('About'),
-        content:Text('Covidfy app v1.0.0 Developed by Rodger Kumwanje',
+        content:Text('Covidfy app v1.2.0 Developed by Rodger Kumwanje',
         style: TextStyle(
           fontSize: 19
         ),),
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 230, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 180, 0, 0),
               child: Column(
                 children: <Widget>[
                 Container(
@@ -128,7 +128,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(20, 5, 20, 35),
+                            padding: EdgeInsets.fromLTRB(20, 5, 15, 35),
                             child: Text(
                               'Call Number'
                               ,
@@ -165,7 +165,7 @@ class _HomeState extends State<Home> {
                                fontWeight: FontWeight.bold
                             ),),
                             Padding(
-                              padding:EdgeInsets.fromLTRB(30, 0, 30, 20),
+                              padding:EdgeInsets.fromLTRB(30, 0, 20, 20),
                               child: Text(
                                 'Symptoms',
                                 style: TextStyle(
@@ -203,7 +203,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Padding(
-                            padding:EdgeInsets.fromLTRB(35, 5, 20, 35) ,
+                            padding:EdgeInsets.fromLTRB(33, 5, 15, 35) ,
                             child: Text(
                               'Prevention',
                                style: TextStyle(
@@ -235,9 +235,9 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.fromLTRB(30, 5, 25, 38),
+                            padding: EdgeInsets.fromLTRB(15, 5, 15, 38),
                             child: Text(
-                              'World Stats',
+                              'Malawi Stats',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,

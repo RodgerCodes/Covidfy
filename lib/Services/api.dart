@@ -13,7 +13,7 @@ class api{
 
   Future<void> getData() async {
     try{
-       Response response = await  get('https://corona.lmao.ninja/v2/all');
+       Response response = await  get('https://disease.sh/v2/countries/Malawi?yesterday=true&strict=true');
        Map data = jsonDecode(response.body);
        int cases = data['cases'];
        int deaths = data['deaths'];

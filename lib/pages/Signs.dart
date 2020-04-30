@@ -114,14 +114,14 @@ class _SignsState extends State<Signs> {
                   Container(
                     margin:EdgeInsets.fromLTRB(0, 30, 0, 10) ,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
                           Icons.warning,
                           color: Colors.red,
                           size: 29,
                         ),
-                        Text('If you are experiencing these symptoms',
+                        Text('Experiencing any of the above?',
                     style: TextStyle(
                       color:Colors.white,
                       fontSize: 20

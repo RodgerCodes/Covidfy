@@ -14,6 +14,12 @@ class _SplashState extends State<Splash> {
     });
   }
 
+  Future<Null> _handleRefresh()async{
+    return await Future.delayed(Duration(seconds:3),(){
+      print('Refreshing');
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -22,18 +28,22 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: SafeArea(
+       body: RefreshIndicator(
+         onRefresh: _handleRefresh,
+         child: ListView(
+           children: <Widget>[
+              SafeArea(
                 child: Column(
            children: <Widget>[
              Padding(
-               padding: EdgeInsets.fromLTRB(100, 10, 0, 0),
-               child: Image.asset('assets/covidy.png',
+               padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+               child: Image.asset('assets/ncov.png',
                width: 200,
                height: 150,),
              ),
              Container(
-               margin: EdgeInsets.fromLTRB(120, 450, 0, 0),
-               child: SpinKitCubeGrid(
+               margin: EdgeInsets.fromLTRB(10, 400, 0, 0),
+               child: SpinKitFadingCircle(
                  color: Colors.grey[900],
                  size: 50,
                ),
@@ -41,6 +51,9 @@ class _SplashState extends State<Splash> {
            ],
          ),
        ),
+           ],
+         ),
+       )
     );
   }
 }
