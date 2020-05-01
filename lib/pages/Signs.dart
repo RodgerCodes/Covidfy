@@ -145,7 +145,7 @@ class _SignsState extends State<Signs> {
                       size: 50,
                     ),
                     onPressed: () {
-                      launch('tel:+265 880 122 611');
+                      launch('tel:54747');
                     },
                   )
                       ], 

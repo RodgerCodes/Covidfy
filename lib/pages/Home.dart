@@ -87,13 +87,13 @@ class _HomeState extends State<Home> {
               margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
               child: Column(
                 children: <Widget>[
-                  Text('Corona Virus',
+                  Text('novel Corona Virus',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20
                   ),),
                   Text(
-                    'call toll free number',
+                    'call toll free number: Airtel',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white
